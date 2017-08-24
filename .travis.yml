@@ -9,7 +9,7 @@ cache:
 
 before_install:
   - docker pull nmhnmh/sitekicker
-  - docker run --rm nmhnmh/sitekicker -v "$TRAVIS_BUILD_DIR:/source"
+  - docker run --rm -v "$TRAVIS_BUILD_DIR:/source" nmhnmh/sitekicker 
 
 script:
   - echo "Done"
