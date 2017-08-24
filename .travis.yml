@@ -13,3 +13,15 @@ before_install:
 
 script:
   - echo "Done"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  repo: nmhnmh/nmhnmh.github.io
+  local_dir: .build
+  target_branch: master
+  email: niminghao804@gmail.com
+  name: Minghao Ni
+  on:
+    branch: master
