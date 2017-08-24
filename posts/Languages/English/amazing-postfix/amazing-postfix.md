@@ -1,0 +1,4 @@
+-tion
+-tian
+-ness
+-ish

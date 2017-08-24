@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ site.user_options['base_url'] | xml_escape }}/</loc>
+    <lastmod>{{ site.time | date_to_iso8601 }}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  {% for entry in site.sorted_entries %}
+  {% if entry.options['type'] not in ['hidden'] %}
+  <url>
+    <loc>{{ entry.perm_link | xml_escape }}</loc>
+    <lastmod>{{ site.time | date_to_iso8601 }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {% endif %}
+  {% endfor %}
+</urlset>

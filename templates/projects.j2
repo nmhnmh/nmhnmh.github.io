@@ -1,0 +1,14 @@
+{% extends "default.j2" %}
+
+{% block content %}
+  {% for group in site.sorted_entries|selectattr('options.type', 'equalto', 'project')|groupby('date.year')|reverse %}
+    <div class="book-year-heading">
+      <h2>{{ group.grouper }} ({{ group.list|length }} {{ 'Projects' if group.list|length is greaterthan 1 else 'Project' }})</h2>
+    </div>
+    {% for entry in group.list %}
+      <div class="index_entry">
+        <a class="index_entry_title" href="{{ entry.link }}">{{ entry.options['title'] }}</a>
+      </div>
+    {% endfor %}
+  {% endfor %}
+{% endblock %}

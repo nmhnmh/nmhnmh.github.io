@@ -1,0 +1,29 @@
+// loop over array
+ul
+  each val in [1, 2, 3, 4, 5]
+    li= val
+// loop over array with index
+ul
+  each val, index in ['zero', 'one', 'two']
+    li= index + ': ' + val
+// loop over object keys
+ul
+  each val, index in {1:'one',2:'two',3:'three'}
+    li= index + ': ' + val
+// loop with js expressions
+- var values = [];
+ul
+  each val in values.length ? values : ['There are no values']
+    li= val
+// loop with else for empty values
+- var values = [];
+ul
+  each val in values
+    li= val
+  else
+    li There are no values
+// while loops
+- var n = 0;
+ul
+  while n < 4
+    li= n++

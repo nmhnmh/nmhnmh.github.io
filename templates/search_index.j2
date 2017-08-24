@@ -1,0 +1,8 @@
+[
+{% for entry in site.sorted_entries %}
+  {% if entry.options['type'] not in ['page', 'hidden'] %}
+    {"title": "{{ entry.options['title'] | escape_quote }}", "tags": "{{ entry.options['tags'] | join(', ') | escape_quote }}", "link": "{{ entry.link | escape_quote }}"}{% if not loop.last %},
+    {% endif %}
+  {% endif %}
+{% endfor %}
+]

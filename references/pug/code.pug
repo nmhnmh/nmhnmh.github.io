@@ -1,0 +1,25 @@
+//Unbuffered code: no direct output
+//inline code
+- for (var x = 0; x < 3; x++)
+  li Item #{x}
+//block code
+-
+  var arr = [1, 2, 3]
+  var list = ["Uno", "Dos", "Tres",
+          "Cuatro", "Cinco", "Seis"]
+each item in list
+  li= item
+each a in arr
+  li= a
+//Buffered code: escaped, evaluted, output
+//inline code
+p= 'This code is' + ' <escaped>!'
+//block code
+p
+  = 'This code is <escaped>!'
+//Unescaped Buffered Code: evaluted, output, not escaped, DANGEROUS!!!
+//inline code
+p!= 'This code is' + ' <strong>not</strong> escaped!'
+//block code
+p
+  != 'This code is <strong>not</strong> escaped!'

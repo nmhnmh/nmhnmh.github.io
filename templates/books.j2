@@ -1,0 +1,31 @@
+{% extends "default.j2" %}
+
+{% block content %}
+
+  <div style="">
+    {% for group in site.sorted_entries|selectattr('options.type', 'equalto', 'book')|groupby('date.year')|reverse %}
+      <div class="book-year-heading">
+        <h2>{{ group.grouper }} ({{ group.list|length }} {{ 'Books' if group.list|length is greaterthan 1 else 'Book' }})</h2>
+      </div>
+      <div class="books-of-year books-of-year-{{ group.grouper }}">
+      {% for entry in group.list %}
+        <div class="book-tile">
+          <div class="book-cover">
+            <img src="{{ entry.link + "/cover.jpg" }}" alt="{{ entry.options['title'] }}">
+          </div>
+          <div class="book-hover">
+            <a class="index_entry_title" href="{{ entry.link }}"><strong>{{ entry.options['title'] }}</strong></a>
+            <br>
+            <span>{{ entry.options['author'] }}</span>
+            <br>
+            <span>{{ entry.options['publisher'] }}</span>
+            <br>
+            <span>{{ entry.options['isbn'] }}</span>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

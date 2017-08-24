@@ -1,0 +1,5 @@
+name: niminghao.com
+base_url: http://niminghao.com
+output_dir: '.build'
+ignore_dirs:
+  - '/node_modules'

@@ -1,0 +1,6 @@
+CJK Unified Ideographs (4E00-9FCC) [\u4E00-\u9FCC]
+CJK Unified Ideographs Extension A (3400-4DB5) [\u3400-\u4DB5]
+CJK Unified Ideographs Extension B (20000-2A6D6) [\ud840-\ud868][\udc00-\udfff]|\ud869[\udc00-\uded6]
+CJK Unified Ideographs Extension C (2A700-2B734) \ud869[\udf00-\udfff]|[\ud86a-\ud86c][\udc00-\udfff]|\ud86d[\udc00-\udf34]
+CJK Unified Ideographs Extension D (2B840-2B81D) \ud86d[\udf40-\udfff]|\ud86e[\udc00-\udc1d]
+12 characters within the CJK Compatibility Ideographs (F900-FA6D/FA70-FAD9) but which are actually CJK unified ideographs [\uFA0E\uFA0F\uFA11\uFA13\uFA14\uFA1F\uFA21\uFA23\uFA24\uFA27-\uFA29]

@@ -1,0 +1,47 @@
+- var user = { description: 'foo bar baz' }
+- var authorised = false
+// full version
+#user1
+  - if(user.description)
+    h2.green Description
+    p.description= user.description
+  - else if(authorised)
+    h2.blue Description
+    p.description.
+      User has no description,
+      why not add one...
+  - else
+    h2.red Description
+    p.description User has no description
+// omit leading dash
+#user2
+  if(user.description)
+    h2.green Description
+    p.description= user.description
+  else if(authorised)
+    h2.blue Description
+    p.description.
+      User has no description,
+      why not add one...
+  else
+    h2.red Description
+    p.description User has no description
+// omit parenthesis
+#user3
+  if user.description
+    h2.green Description
+    p.description= user.description
+  else if authorised
+    h2.blue Description
+    p.description.
+      User has no description,
+      why not add one...
+  else
+    h2.red Description
+    p.description User has no description
+
+// the following two are equivalent
+unless user.isAnonymous
+  p You're logged in as #{user.name}
+if !user.isAnonymous
+  p You're logged in as #{user.name}

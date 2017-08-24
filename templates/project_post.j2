@@ -1,0 +1,16 @@
+{% extends "default.j2" %}
+
+{% block content %}
+
+<div class="content_wrapper">
+  <span class="entry_title">{{ title }}</span>
+  <div class="entry_info">
+    {{ date.strftime('%b %d, %Y') }}
+  </div>
+</div>
+
+<div class="content_wrapper">
+{{ entry_content }}
+</div>
+
+{% endblock %}
