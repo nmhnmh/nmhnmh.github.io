@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+cache:
+  directories:
+    - .build
+
+before_install:
+  - docker pull nmhnmh/sitekicker
+  - docker run --rm nmhnmh/sitekicer -v "$TRAVIS_BUILD_DIR:/source"
+
+script:
+  - echo "Done"
