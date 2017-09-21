@@ -52,6 +52,10 @@ jython
 it will download the specified python installation files from official websites, and install them to `~/.pyenv`(this is customizable).
 To use a specific python version or flavor for your specific project, you simply either put a `.python-version` file inside the project root folder, when you enter this project folder, pyenv will get the version specified in this `.python-version` file, and switch to use the right binaries and packages, if you `.python-version` file contains `3.0.1`, then `python` will be using `python3.0.1`, it is really handy. You could even override system default python by setting `PYENV_VERSION` in your `.bashrc` or put a `.python-version` file in the root the filesystem.
 
+[pipenv][]: Sacred Marriage of Pipfile, Pip, & Virtualenv
+--------------------------------------------------------------------------------
+Another new virtual environment management tool, written in pure python, so support for Windows should be better.
+
 [tox][]: A virtualenv manager and a test utility
 --------------------------------------------------------------------------------
 tox aims to automate and standardize testing in python.
@@ -119,6 +123,7 @@ Python C/Cpp Extension, JIT, Runtime
 [virtualenv]: https://github.com/pypa/virtualenv
 [virtualenvwrapper]: https://virtualenvwrapper.readthedocs.io
 [pyenv]: https://github.com/yyuu/pyenv
+[pipenv]: https://github.com/kennethreitz/pipenv
 [tox]: https://tox.readthedocs.io/en/latest/
 [doctest]: https://docs.python.org/3/library/doctest.html
 [unittest]: https://docs.python.org/3/library/unittest.html 
