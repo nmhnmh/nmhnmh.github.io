@@ -58,6 +58,7 @@ Site History
 --------------------------------------------------------------------------------
 Date | Event
 :---:|:----
+2017-Sep-26 | Use [Netlify](https://www.netlify.com/) hosting to get custom domain https
 2017-Aug-21 | Use **niminghao.com** as domain name and hosted with [Github Pages](https://pages.github.com/)
 2017-Jan-01 | The site is **online** as ~~https://minghao.io~~
 2016-Oct-10 | The site is re-organized and built with my own static site generator [SiteKicker](https://github.com/nmhnmh/sitekicker)
