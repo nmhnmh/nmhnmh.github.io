@@ -2,7 +2,7 @@
 
 {% block content %}
   {% for entry in site.sorted_entries %}
-  {% if entry.options['type'] not in ['project', 'page', 'hidden'] %}
+  {% if entry.options['type'] not in ['project', 'page', 'reference', 'hidden'] %}
   <div class="index_entry">
     {% if entry.options['type'] == 'book' %}
     <a class="index_entry_title index-book-title" href="{{ entry.link }}">

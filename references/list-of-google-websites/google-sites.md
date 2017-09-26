@@ -2,6 +2,8 @@
 id: a-list-of-google-websites
 title: A List of Google Websites
 date: 2016-09-30
+tags:
+  - Google
 ---
 
 Google is one my favourite tech company, they have many great products, and they also have so many websites, I wonder if there exists some kind of list of all Google products or websites, I decide to make my own list. It is not going to be complete or exhaustive, I will update it when I find something new.

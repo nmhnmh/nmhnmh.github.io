@@ -1,10 +1,9 @@
 ---
-id: pug-reference
-title: Javascript Pug Template Cheatsheet
+id: pug
+title: Pug Cheatsheet
 date: 2016-12-19
 tags:
   - Javascript
-  - Todo
 ---
 
 This is a reference for Pug template language only(based on official docs), it tends to be short and compact.

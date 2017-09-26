@@ -7,7 +7,7 @@
     </div>
     {% for entry in group.list %}
       <div class="index_entry">
-        <a class="index_entry_title" href="{{ entry.link }}">{{ entry.options['title'] }}</a>
+        <a class="index_entry_title" href="{{ entry.options['override_link'] | default(entry.link) }}">{{ entry.options['title'] }}</a>
       </div>
     {% endfor %}
   {% endfor %}
