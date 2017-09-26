@@ -4,7 +4,11 @@
   {% for entry in site.sorted_entries %}
   {% if entry.options['type'] not in ['project', 'page', 'hidden'] %}
   <div class="index_entry">
+    {% if entry.options['type'] == 'book' %}
+    <a class="index_entry_title index-book-title" href="{{ entry.link }}">
+    {% else %}
     <a class="index_entry_title" href="{{ entry.link }}">
+    {% endif %}
     {{ entry.options['title'] }}
     </a>
     <div class="index_entry_info">
