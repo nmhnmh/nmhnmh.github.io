@@ -209,6 +209,16 @@ Name | Note
 [alm](https://github.com/alm-tools/alm) | A cloud ready IDE for TypeScript
 [WebStrom](https://www.jetbrains.com/webstorm/) | Smart javascript IDE built by JetBrains.
 
+
+## WebComponents Solutions
+
+Name | Note
+--- | ---
+[Polymer](https://www.polymer-project.org/1.0/) | A framework uses **Web Components**, **Shadown Dom**, **HTML Import** etc, still by Google, though it is not as popular as Angular React or Vue.js etc, but the design and concepts are really cool!
+[skate.js](http://skatejs.github.io/) | A functional, featherweight and cross-framework compatible web component library built on W3C specs.
+[svelte](https://svelte.technology/) | "The magical disappearing UI framework" -- Svelte Website
+[stencil](https://stenciljs.com/) | The magical, reusable web component generator, built by Ionic.
+
 # Frontend Frameworks
 
 Name | For
@@ -222,7 +232,6 @@ Name | For
 [Meteor.js](https://www.meteor.com/) | 
 [NativeScript](https://www.nativescript.org/) | 
 [Ionic Framework](http://ionicframework.com/) | 
-[Polymer](https://www.polymer-project.org/1.0/) | A framework uses **Web Components**, **Shadown Dom**, **HTML Import** etc, still by Google, though it is not as popular as Angular React or Vue.js etc, but the design and concepts are really cool!
 
 ## Angular2 Resources
 
