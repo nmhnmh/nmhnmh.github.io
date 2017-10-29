@@ -6,7 +6,7 @@ tags:
   - Vim
 ---
 
-# Vim and Plguins Cheatsheet
+# Vim Plguins Cheatsheet
 
 ## [vim-plug]: Modern Vim plugin manager
 

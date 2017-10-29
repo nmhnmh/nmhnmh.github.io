@@ -10,11 +10,13 @@ This is a page to keep track of some useful **Javascript** stuff. It will be upd
 
 # Community
 
-[js.org](https://js.org/)
-[stats.js.org](https://stats.js.org/), js library trends
-[news.js.org](http://news.js.org), js news
-[dns.js.org](http://news.js.org), free js.org subdomain for your projects
-[wasm.news](https://wasm.news/), Web Assembly News
+Name | Note
+--- | ---
+[js.org](https://js.org/) | Free resource for JS community
+[stats.js.org](https://stats.js.org/) | js library trends
+[news.js.org](http://news.js.org) | js news
+[dns.js.org](http://news.js.org) | free js.org subdomain for your projects
+[wasm.news](https://wasm.news/) | Web Assembly News
 
 # FRP(Functional Reactive Programming)
 
@@ -42,12 +44,6 @@ Name | Note
 [Dart](https://www.dartlang.org/) | A language that compiles to javascript, but it is not javascript, developed and used by Google.
 [Elm](http://elm-lang.org/) | I don't know much about this yet
 [ClojureScript](https://clojurescript.org/) | Another new one?
-
-## TypeScript Resources
-
-Name | Note
---- | ---
-[TypeScript Deep Dive](https://www.gitbook.com/book/basarat/typescript) | A great online book about TypeScript
 
 # Testing
 
@@ -146,6 +142,7 @@ Name | Note
 [XO][] | Beautiful js style linter, uses ESLint
 [JSLint](http://www.jslint.com/) | js code quality tool by Douglas Crockford
 [Ternjs](http://ternjs.net/) | a stand-alone js code analysis engine, usually used for code autocompletion
+[standardjs](https://standardjs.com/) | JavaScript Standard Style
 
 ## NPM Related Tools & Services
 
@@ -154,35 +151,47 @@ Name | Note
 https://npms.io | A better package search engine for NPM
 https://david-dm.org | NPM package dependency status monitor
 https://nodesecurity.io/ | Continuous Node Security Platform
+https://greenkeeper.io/ | Get safety & consistency with real-time monitoring and automatic updates for npm dependencies
 
 ## Modules
 
-- [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
-- [CommonJS](http://www.commonjs.org/)
-- [ES6](http://exploringjs.com/es6/ch_modules.html)
-- [UMD](https://github.com/umdjs/umd)
-- [Isomorphic](http://isomorphic.net/)
+Name | Note
+--- | ---
+[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) | 
+[CommonJS](http://www.commonjs.org/) | 
+[ES6](http://exploringjs.com/es6/ch_modules.html) | 
+[UMD](https://github.com/umdjs/umd) | 
+[Isomorphic](http://isomorphic.net/) | 
 
 ## Package manager
-- [NPM](https://www.npmjs.com/), the de-facto and default node.js package manager.
-- [Yarn](https://yarnpkg.com/), another package manager by Facebook, compatible with NPM and Bower packages.
-- [Bower](https://bower.io/)
+
+Name | Note
+--- | ---
+[NPM](https://www.npmjs.com/) | the de-facto ~~NodeJS~~ Javascript package manager
+[Yarn](https://yarnpkg.com/) | another package manager by Facebook, compatible with NPM and Bower packages
+[Bower](https://bower.io/) | it is almost dead, not used nowadays
 
 ## Module Bundler
-- [Webpack1](https://webpack.github.io/)
-- [Webpack2](https://webpack.js.org/)
-- [RequireJS](http://requirejs.org/)
-- [SystemJS](https://github.com/systemjs/systemjs)
-- [Browserify](https://github.com/systemjs/systemjs)
-- [Rollup](https://github.com/rollup/rollup): Next-generation ES6 module bundler
-- [jspm](http://jspm.io/): Frictionless browser package management
+
+Name | Note
+--- | ---
+[Webpack1](https://webpack.github.io/) |
+[Webpack2](https://webpack.js.org/) |
+[RequireJS](http://requirejs.org/) |
+[SystemJS](https://github.com/systemjs/systemjs) |
+[Browserify](https://github.com/systemjs/systemjs) | Use NPM packages in browsers
+[Rollup](https://github.com/rollup/rollup) | Next-generation ES6 module bundler
+[jspm](http://jspm.io/) | Frictionless browser package management
 
 ## Task runner
-- [Gulp](http://gulpjs.com/)
-- [Grunt](http://gruntjs.com/)
-- [Broccoli](http://broccolijs.com/)
-- [Make](https://www.gnu.org/software/make/)
-- [NPM](https://www.npmjs.com/)
+
+Name | Note
+--- | ---
+[Gulp](http://gulpjs.com/) | 
+[Grunt](http://gruntjs.com/) | 
+[Broccoli](http://broccolijs.com/) | 
+[Make](https://www.gnu.org/software/make/) | 
+[NPM](https://www.npmjs.com/) | 
 
 ## Code Compression, Uglify, Obscuration
 
@@ -195,9 +204,11 @@ Name | Note
 
 ## Documentation
 
-- [JsDoc](http://usejsdoc.org/)
-- [EsDoc](https://esdoc.org/)
-- [Dgeni](https://github.com/angular/dgeni): Flexible JavaScript documentation generator used by AngularJS, Protractor and other JS projects
+Name | Note
+--- | ---
+[JsDoc](http://usejsdoc.org/) |
+[EsDoc](https://esdoc.org/) |
+[Dgeni](https://github.com/angular/dgeni) | Flexible JavaScript documentation generator used by AngularJS, Protractor and other JS projects
 
 ## Editors
 
@@ -266,11 +277,13 @@ Name | For
 [superagent](https://github.com/visionmedia/superagent) | HTTP Request Library
 
 ## Great JS & Node.js Books
-- [Javascript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) by Douglas Crockford
-- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS), free online reading, by Kyle Simpson
-- [Node Patterns](http://nodepatternsbooks.com/), great articles about Node.js apps
-- https://blog.yld.io, great resources about Nodejs
-- https://nodesource.com/blog
+Name | Note
+--- | ---
+[Javascript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) by Douglas Crockford | A must read JS book
+[You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) | free online JS book, by Kyle Simpson
+[Node Patterns](http://nodepatternsbooks.com/) | great articles about Node.js
+https://blog.yld.io | great resources about Nodejs
+https://nodesource.com/blog | official blog of Node.js
 
 
 [tslint]: https://palantir.github.io/tslint/ "An extensible linter for the TypeScript language"

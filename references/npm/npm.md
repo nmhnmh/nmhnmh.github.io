@@ -6,8 +6,6 @@ tags:
   - Javascript
 ---
 
-# NPM Cheatsheet
-
 ## User & Team & Access Management
 
 npm command | alias | note
