@@ -1,6 +1,22 @@
 {% extends "default.j2" %}
 
 {% block title %}
+<!-- Facebook OG Tags-->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ perm_link }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ summary }}">
+<meta property="og:site_name" content="{{ site.user_options['name'] }}">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@niminghao">
+<meta name="twitter:creator" content="@niminghao">
+<meta name="twitter:url" content="{{ perm_link }}">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ summary }}">
+
 <title>Post: {{ title }}</title>
 {% endblock %}
 

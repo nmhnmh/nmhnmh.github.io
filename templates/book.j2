@@ -1,5 +1,27 @@
 {% extends "default.j2" %}
 
+{% block title %}
+<!-- Facebook OG Tags-->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ perm_link }}">
+<meta property="og:title" content="{{ "读书随笔" + title }}">
+<meta property="og:description" content="{{ summary }}">
+<meta property="og:site_name" content="{{ site.user_options['name'] }}">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="{{ perm_link + '/' + 'cover.jpg'}}">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@niminghao">
+<meta name="twitter:creator" content="@niminghao">
+<meta name="twitter:url" content="{{ perm_link }}">
+<meta name="twitter:title" content="{{ "读书随笔：" + title }}">
+<meta name="twitter:description" content="{{ summary }}">
+<meta name="twitter:image" content="{{ perm_link + '/' + 'cover.jpg'}}">
+
+<title>读书随笔: {{ title }}</title>
+{% endblock %}
+
 {% block content %}
 
 <div class="">
