@@ -127,3 +127,11 @@ load-module module-switch-on-connect
 sudo ifconfig wlan0 down
 ```
 使用外接的独立USB无线网卡也可以解决该问题，或者使用以太网网线进行连接。
+
+# 参考链接
+
+* https://wiki.debian.org/Bluetooth/Alsa
+* https://github.com/Arkq/bluez-alsa
+* https://wiki.archlinux.org/index.php/Bluetooth_headset
+* https://wiki.archlinux.org/index.php/bluetooth
+* https://wiki.debian.org/PulseAudio
