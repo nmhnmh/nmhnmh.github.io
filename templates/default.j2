@@ -12,55 +12,52 @@
     {% if 'code' in meta_tags %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.11.0/styles/monokai-sublime.min.css">
     {% endif %}
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i|Patua+One&amp;subset=greek,greek-ext,latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/desktop.css">
     <link rel="stylesheet" href="/assets/css/mobile.css">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <a href="/" id="logo">{{ site.user_options['name'] }}</a>
-        <div id="nav_trigger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul id="nav_menu">
-          <li><a href="/posts">Posts</a></li>
-          <li><a href="/books">Reading</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/references">References</a></li>
-          <li><a href="/about">About</a></li>
-          <li><input type="text" id="q" placeholder="Search"></li>
-        </ul>
-      </header>
-      <div id="banner">
+    <header>
+      <a href="/" id="logo">{{ site.user_options['name'] }}</a>
+      <div id="nav_trigger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
+      <ul id="nav_menu">
+        <li><a href="/posts">寫 / Posts</a></li>
+        <li><a href="/books">讀 / Reading</a></li>
+        <li><a href="/projects">做 / Projects</a></li>
+        <li><a href="/references">雜 / References</a></li>
+        <li><a href="/about">我 / About</a></li>
+        <li><input type="text" id="q" placeholder="搜 / Search"></li>
+      </ul>
       <div id="q_results">
       </div>
+    </header>
+    <div class="wrapper">
       {% block content %}
       <div class="content_wrapper">
       {{ entry_content }}
       </div>
       {% endblock %}
-      {% block prefooter %}
-      {% endblock %}
-      <footer>
-          <div>
-            <a href="https://twitter.com/niminghao" title="Visit My Twitter"><img style="width: 31px; height: 31px;" src="/assets/images/twitter.png" alt="Twitter"></a>
-            <a href="#niminghao804.gmail" title="Send me an email: niminghao804.gmail"><img style="width: 31px; height: 31px;" src="/assets/images/gmail.png" alt="Gmail"></a>
-            <a href="https://github.com/nmhnmh" title="See me on Github"><img style="width: 31px; height: 31px;" src="/assets/images/github.png" alt="Github"></a>
-            <a href="/rss.xml" title="Subscribe to RSS Feed"><img style="width: 31px; height: 31px;" src="/assets/images/rss.jpg" alt="RSS"></a>
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International"><img style="height: 31px;" src="/assets/images/cc-by-nc-sa.png" alt="CC BY-NC-SA 4.0"></a>
-          </div>
-          <div style="font-size: 0.6rem">
-            If not explicitly specified, contents on this website are licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-            <br>
-            未单独声明的情况下，本站内容默认采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
-          </div>
-      </footer>
     </div>
+    {% block prefooter %}
+    {% endblock %}
+    <footer>
+        <div>
+          <a href="https://twitter.com/niminghao" title="Visit My Twitter"><img style="width: 31px; height: 31px;" src="/assets/images/twitter.png" alt="Twitter"></a>
+          <a href="#niminghao804.gmail" title="Send me an email: niminghao804.gmail"><img style="width: 31px; height: 31px;" src="/assets/images/gmail.png" alt="Gmail"></a>
+          <a href="https://github.com/nmhnmh" title="See me on Github"><img style="width: 31px; height: 31px;" src="/assets/images/github.png" alt="Github"></a>
+          <a href="/rss.xml" title="Subscribe to RSS Feed"><img style="width: 31px; height: 31px;" src="/assets/images/rss.jpg" alt="RSS"></a>
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International"><img style="height: 31px;" src="/assets/images/cc-by-nc-sa.png" alt="CC BY-NC-SA 4.0"></a>
+        </div>
+        <div style="font-size: 0.6rem">
+          If not explicitly specified, contents on this website are licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+          <br>
+          未单独声明的情况下，本站内容默认采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+        </div>
+    </footer>
     {% if 'math' in meta_tags %}
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
     {% endif %}

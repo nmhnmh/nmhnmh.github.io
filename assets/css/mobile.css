@@ -5,6 +5,7 @@
     margin: 0 auto;
     background-color: white;
     width: 100%;
+    padding: 5px 5px;
   }
   header{
     padding: 0;
@@ -74,5 +75,45 @@
   #disqus_thread{
     border-top: 5px solid black;
     padding: 5px;
+  }
+  /*Book Shelf*/
+  .wrapper .book-year-heading{
+  }
+  .wrapper .book-tile{
+    height: 200px;
+    width: 150px;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+  }
+  .wrapper .book-tile .book-cover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    z-index: 100;
+  }
+  .wrapper .book-tile .book-cover img{
+    width: 150px;
+    max-height: 200px;
+  }
+  .wrapper .book-tile .book-hover{
+    padding:2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: inline-block;
+    width: 150px;
+    height: 200px;
+    background-color: white;
+    overflow: hidden;
+  }
+  .wrapper .book-tile:hover .book-cover{
+    z-index: 10;
+  }
+  .wrapper .book-tile:hover .book-hover{
+    display: inline-block;
+    z-index: 100;
   }
 }

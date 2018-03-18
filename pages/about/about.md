@@ -5,11 +5,13 @@ title: About Me
 layout: default
 ---
 
-Hello there!
+你好 • Hello • Hola • ハロー • Ciao • Bonjour • Hallo • Olá • привет • שלום • مرحبا
 --------------------------------------------------------------------------------
-This is a **personal website**, I post some personal writings about tech life books ~~movies~~ or anything that interests me. I write these things for my own use, but I would be very happy if you find some of these useful to you.
+This is my **personal website**, I write something about various topics and post them here.
 
-Tools I Use
+这是我的个人网站，我会不定期写一些东西然后发布在这上面。
+
+我使用的一些工具 / Tools I Use
 --------------------------------------------------------------------------------
 Type | List
 :---:|:---:
@@ -27,20 +29,20 @@ Feed | [Feedly](http://feedly.com/)
 Read It Later | [Pocket](https://getpocket.com/)
 Documentation | [Dash](https://kapeli.com/dash)
 
-Some Great Online Tools I Use
+一些很棒的在线工具 / Some Great Online Tools I Use
 --------------------------------------------------------------------------------
 Name | For
 ---|---
 https://regex101.com/ | Super powerful regexp debug tool, it is awesome!
 
-Some Mac Apps I Use
+一些很棒的macOS软件 / Some macOS Apps I Use
 --------------------------------------------------------------------------------
 Name | For
 ---|---
 [Alfred](https://www.alfredapp.com/) | Search, Workflow, Integration
 [Spectacle](https://www.spectacleapp.com/) | Essential App window management
 
-Some Command Line Tools I Use
+一些很棒的命令行工具 / Some Command Line Tools I Use
 --------------------------------------------------------------------------------
 Name | For
 ---|---
@@ -54,7 +56,7 @@ Name | For
 [Fabric](http://www.fabfile.org/) | A simple yet powerful tool to run tasks on remote servers, a simple DevOps tool.
 [Ansible](https://www.ansible.com/) | Remote server automation & management framework, a DevOps tool.
 
-Site History
+网站历史 / Site History
 --------------------------------------------------------------------------------
 Date | Event
 :---:|:----
