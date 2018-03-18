@@ -2,15 +2,9 @@
 
 {% block content %}
   {% for entry in site.sorted_entries %}
-  {% if entry.options['type'] not in ['project', 'page', 'reference', 'hidden'] %}
+  {% if entry.options['type'] not in ['book', 'project', 'page', 'reference', 'hidden'] %}
   <div class="index_entry">
-    {% if entry.options['type'] == 'book' %}
-    <a class="index_entry_title index-book-title" href="{{ entry.link }}">
-    {% else %}
-    <a class="index_entry_title" href="{{ entry.link }}">
-    {% endif %}
-    {{ entry.options['title'] }}
-    </a>
+    <a class="index_entry_title" href="{{ entry.link }}">{{ entry.options['title'] }}</a>
     <div class="index_entry_info">
         {{ entry.options['date'].strftime('%b %d %Y') }}
         {% for t in entry.options['tags'] %}
