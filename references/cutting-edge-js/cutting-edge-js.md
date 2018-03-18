@@ -93,6 +93,7 @@ Name | Note
 [expect.js](https://github.com/Automattic/expect.js)|
 [better-assert][] |
 [unexpected.js][] |
+[power-assert](https://github.com/power-assert-js/power-assert) |
 
 # Code Coverage
 
@@ -268,13 +269,24 @@ Name | For
 [express](http://expressjs.com/) | Fast, unopinionated, minimalist web framework for Node.js
 [koa](http://koajs.com/) | next generation web framework for Node.js
 
-## Useful packages
+## Useful NPM packages
 
 Name | For
 --- | ---
+[ms]https://www.npmjs.com/package/ms() | working with milliseconds made easy
+[uuid](https://www.npmjs.com/package/uuid) | Generate uuid with node.js
+[bcrypt](https://www.npmjs.com/package/bcrypt) | generate secure hash for your passwords
+[mongoose](http://mongoosejs.com/) | Node.js MongoDB bridge
 [chalk](https://github.com/chalk/chalk) | Add color to your terminal output!
 [request](https://github.com/request/request) | HTTP Request Client
+[axios](https://github.com/axios/axios) | HTTP Request Client with Promise support
 [superagent](https://github.com/visionmedia/superagent) | HTTP Request Library
+[passport.js](http://www.passportjs.org/) | Oauth and user login library
+[nodemailer](https://nodemailer.com) | Node.js email sending library
+[commander.js](https://github.com/tj/commander.js) | Node.js command line framework
+[lodash](https://lodash.com/) | An powerful js utility library
+[marked](https://www.npmjs.com/package/marked) | Working with markdown
+[cheerio](https://www.npmjs.com/package/cheerio) | jQuery-like html utilities for Node.js
 
 ## Great JS & Node.js Books
 Name | Note
