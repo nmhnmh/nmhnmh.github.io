@@ -12,6 +12,7 @@ Google is one my favourite tech company, they have many great products, and they
 
 Name | Usage
 -----|----
+https://startup.google.com/ | A list of many Google services and products for startups
 https://gsuite.google.com/ | AKA "Google Apps"
 https://enterprise.google.com | Google for Business
 https://support.google.com/ | Get Help & Support from Google
