@@ -12,6 +12,8 @@ Google is one my favourite tech company, they have many great products, and they
 
 Name | Usage
 -----|----
+https://get.app/ | Home page for .app TLD
+https://www.registry.google/ | Home page of Google Registry
 https://startup.google.com/ | A list of many Google services and products for startups
 https://gsuite.google.com/ | AKA "Google Apps"
 https://enterprise.google.com | Google for Business
