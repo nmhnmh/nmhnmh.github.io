@@ -1,0 +1,18 @@
+name: build and deploy to github pages
+
+on:
+  push:
+    branches:
+      - source
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the site source
+        uses: actions/checkout@master
+
+      - name: build the site
+        uses: nmhnmh/sitekicker@latest
+        with:
+          args: ${{ GITHUB_WORKSPACE }}
