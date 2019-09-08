@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: build the site
-        uses: nmhnmh/sitekicker@latest
+        uses: docker://nmhnmh/sitekicker@latest
         with:
           args: ${{ GITHUB_WORKSPACE }}
 
