@@ -15,7 +15,7 @@ This is my **personal website**, I write something about various topics and post
 --------------------------------------------------------------------------------
 Type | List
 :---:|:---:
-Text Editor | [Vim](http://www.vim.org/), ~~[Visual Studio Code](http://code.visualstudio.com/)~~, ~~[Sublime Text](https://www.sublimetext.com/)~~
+Text Editor | ~~[Vim](http://www.vim.org/) still my love, but its GUI and bugs make me suffer~~, [Visual Studio Code](http://code.visualstudio.com/) for its many modern features, [Sublime Text](https://www.sublimetext.com/) for its speed and stability especially with large files
 Shell | [Bash](https://www.gnu.org/software/bash/)
 Terminal | [Iterm2](https://www.iterm2.com/index.html)
 Version Control | [Git](https://git-scm.com/), [Github.com](https://github.com/)
@@ -35,7 +35,7 @@ Name | For
 ---|---
 https://regex101.com/ | Super powerful regexp debug tool, it is awesome!
 
-一些很棒的macOS软件 / Some macOS Apps I Use
+一些很棒的macOS软件 / Some Awesome macOS Apps I Use
 --------------------------------------------------------------------------------
 Name | For
 ---|---
@@ -47,7 +47,8 @@ Name | For
 Name | For
 ---|---
 [homebrew](https://brew.sh/) | `apt-get` for MacOS
-[ack](http://beyondgrep.com/ "a grep alternative") | Great `grep` alternative
+~~[ack](http://beyondgrep.com/ "a grep alternative")~~ | Great `grep` alternative, but now `ripgrep` looks even better
+[ripgrep](https://github.com/BurntSushi/ripgrep) | A modern and faster grep
 [autojump](https://github.com/wting/autojump) | Jump around faster and easier
 [rename](https://github.com/ap/rename) | **Rename** multiple files, **not** the system default rename!
 [httpie](https://httpie.org/) | Great `curl` alternative, much easier and joyful to use!
@@ -60,6 +61,7 @@ Name | For
 --------------------------------------------------------------------------------
 Date | Event
 :---:|:----
+2019-Sep-08 | Moving back to Github pages again
 2018-May-21 | Using Github Pages for web hosting, since it now supports https for custom domain names
 2017-Sep-26 | Use [Netlify](https://www.netlify.com/) hosting to get https support for my custom domain name
 2017-Aug-21 | Use **niminghao.com** as domain name and hosted with [Github Pages](https://pages.github.com/)

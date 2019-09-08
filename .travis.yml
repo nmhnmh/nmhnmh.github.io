@@ -18,7 +18,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  repo: nmhnmh/niminghao.com
+  repo: nmhnmh/nmhnmh.github.io
   local_dir: .build
   target_branch: gh-pages
   email: niminghao804@gmail.com

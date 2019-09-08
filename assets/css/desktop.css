@@ -3,7 +3,8 @@
   .wrapper{
     box-sizing: border-box;
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
+    max-width: 900px;
     position: relative;
     padding: 5px 10px;
   }
