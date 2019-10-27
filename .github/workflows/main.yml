@@ -13,4 +13,6 @@ jobs:
         uses: actions/checkout@v1
 
       - name: build the site
-        run: echo "build done"
+        run: |
+          echo "list workspace files"
+          ls $GITHUB_WORKSPACE
