@@ -1,7 +1,6 @@
 ---
 id: angularjs-tips-and-tricks
 title: Angularjs Tips and Tricks
-date: 2016-10-13
 ---
 
 ## Directives
