@@ -30,7 +30,7 @@ jobs:
         shell: bash
         run: |
           cd "${GITHUB_WORKSPACE}/.build"
-          git init
+          ls -al
 
       - name: git commit
         shell: bash
