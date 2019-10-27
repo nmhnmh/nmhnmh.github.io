@@ -21,6 +21,13 @@ jobs:
           cd ~
           mkdir .ssh
           echo "${{ secrets.ACTIONS_DEPLOY_KEY }}" >> ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+          cat > ~/.ssh/config <<EOF
+host github.com
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa
+  User git
+          EOF
           cd "${GITHUB_WORKSPACE}/.build"
           git init
           git config user.name "${{ github.actor }}"
