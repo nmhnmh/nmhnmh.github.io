@@ -20,7 +20,9 @@ jobs:
         run: |
           cd ~
           mkdir .ssh
-          echo "${{ secrets.ACTIONS_DEPLOY_KEY }}" >> ~/.ssh/id_rsa
+          cat > ~/.ssh/id_rsa <<EOF
+          ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          EOF
           chmod 400 ~/.ssh/id_rsa
           cd "${GITHUB_WORKSPACE}/.build"
           git init
