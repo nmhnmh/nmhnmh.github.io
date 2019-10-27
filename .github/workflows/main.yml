@@ -17,6 +17,7 @@ jobs:
         uses: docker://nmhnmh/sitekicker:latest
 
       - name: deploy to github pages
+        shell: bash
         run: |
           cd ~
           mkdir .ssh
@@ -24,7 +25,15 @@ jobs:
           ${{ secrets.ACTIONS_DEPLOY_KEY }}
           EOF
           chmod 400 ~/.ssh/id_rsa
+
       - name: git commit
+        shell: bash
+        run: |
+          cd "${GITHUB_WORKSPACE}/.build"
+          ls
+
+      - name: git commit
+        shell: bash
         run: |
           cd "${GITHUB_WORKSPACE}/.build"
           git init
@@ -33,6 +42,8 @@ jobs:
           git add .
           git commit -m 'Deploy to GitHub Pages'
       - name: git push
+        shell: bash
         run: |
-          GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa" git push --force "git@github.com:${{ github.repository }}.git" master:master
+          cd "${GITHUB_WORKSPACE}/.build"
+          GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa -F /dev/null" git push --force "git@github.com:${{ github.repository }}.git" master:master
           
