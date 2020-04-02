@@ -23,7 +23,7 @@ Here Doc used inside script file, write Apache configuration file chunks:
 ```
 
 
-But you must understand how does it work behind the scene, though it looks like a long paragraph of text, **Here Doc is passed as a temporary file, not a string**, so when using Here Doc, choose tools and utilities that works with files(like `cat`, `wc`, `less`), those who expecting string(like `echo`, `tr`) will not work!
+But you must understand how does it work behind the scene, though it looks like a long paragraph of text, **Here Doc is passed as a temporary file/stream literal, not a string literal**, so when using Here Doc, choose tools and utilities that works with files or streams(like `cat`, `wc`, `less`), those who expecting string(like `echo`) will not work!
 
 An error seen many times: use echo with Here Doc
 ```bash
@@ -38,11 +38,20 @@ By default, Here Doc support variable interpolation, if you don't want this, add
 
 # What Is Here String?
 
-Here String is something different, it is a string, so generally less useful, thus less famous.
+Here String is something similar(still a stream/file literal, not string literal), but with simpler and different syntax:
 ```bash
 read a b c <<< "A B C"
 echo $a $b $c
 ```
+
+```bash
+echo "A B C" | read a b c
+echo $a $b $c
+```
+The first code snippet will print the contents as expected, a very good example of how here string could be useful.
+The second code snippet will print a blank line, actually the contents are read into `$a` `$b` `$c`, but the `read` builtin is after a `|` operator, so it is in a sub-process, when we come back and try to print, those values are already gone with the sub-process.
+
+Compared with here document, the obvious difference is the lackinig of delimiters in here strings.
 
 # Here Document In Other Languages
 
