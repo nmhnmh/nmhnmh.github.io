@@ -1,0 +1,119 @@
+/* mobile screen */
+@media (max-width: 768px) {
+  .wrapper{
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: white;
+    width: 100%;
+    padding: 5px 5px;
+  }
+  header{
+    padding: 0;
+    border-bottom: 5px solid black;
+  }
+  #banner{
+    display: none;
+  }
+  #logo{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    text-decoration: none;
+    font-family: "Patua One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.6rem;
+  }
+  #nav_trigger{
+    visibility: visible;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    height: 33px;
+    width: 33px;
+    padding: 4px 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #eee;
+  }
+  #nav_trigger span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px 3px;
+    background-color: black;
+  }
+  #nav_menu{
+    display: none;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+  }
+  #nav_menu li{
+    margin: 0;
+    padding: 4px 0;
+    display: block;
+    list-style-type: none;
+    border-top: 1px solid black;
+  }
+  #nav_menu li a{
+    text-align: left;
+    font-weight: bold;
+    padding: 4px 10px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .content_wrapper{
+    overflow: hidden;
+    padding: 5px 5px;
+    line-height: 1.6;
+  }
+
+  #disqus_thread{
+    border-top: 5px solid black;
+    padding: 5px;
+  }
+  /*Book Shelf*/
+  .wrapper .book-year-heading{
+  }
+  .wrapper .book-tile{
+    height: 200px;
+    width: 150px;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+  }
+  .wrapper .book-tile .book-cover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    z-index: 100;
+  }
+  .wrapper .book-tile .book-cover img{
+    width: 150px;
+    max-height: 200px;
+  }
+  .wrapper .book-tile .book-hover{
+    padding:2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: inline-block;
+    width: 150px;
+    height: 200px;
+    background-color: white;
+    overflow: hidden;
+  }
+  .wrapper .book-tile:hover .book-cover{
+    z-index: 10;
+  }
+  .wrapper .book-tile:hover .book-hover{
+    display: inline-block;
+    z-index: 100;
+  }
+}

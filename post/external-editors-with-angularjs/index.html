@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
+<!-- Facebook OG Tags-->
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://niminghao.com/post/external-editors-with-angularjs">
+<meta property="og:title" content="Integrate External Eidtors with Angularjs">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="明浩的个人网站">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@niminghao">
+<meta name="twitter:creator" content="@niminghao">
+<meta name="twitter:url" content="http://niminghao.com/post/external-editors-with-angularjs">
+<meta name="twitter:title" content="Integrate External Eidtors with Angularjs">
+<meta name="twitter:description" content="">
+
+<title>Post: Integrate External Eidtors with Angularjs</title>
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.11.0/styles/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/desktop.css">
+    <link rel="stylesheet" href="/assets/css/mobile.css">
+  </head>
+  <body>
+    <header>
+      <a href="/" id="logo">明浩的个人网站</a>
+      <div id="nav_trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="nav_menu">
+        <li><a href="/posts">写 / Posts</a></li>
+        <li><a href="/books">读 / Reading</a></li>
+        <li><a href="/projects">做 / Projects</a></li>
+        <li><a href="/references">杂 / References</a></li>
+        <li><a href="/about">我 / About</a></li>
+        <li><input type="text" id="q" placeholder="搜 / Search"></li>
+      </ul>
+      <div id="q_results">
+      </div>
+    </header>
+    <div class="wrapper">
+  <div class="" id="entry_header">
+    <span class="entry_title">Integrate External Eidtors with Angularjs</span>
+    <div class="entry_info">
+      Nov 08, 2016
+    </div>
+  </div>
+
+  <div class="content_wrapper">
+    <p>JS editors like <a href="https://www.tinymce.com/">TinyMCE</a>, <a href="https://codemirror.net/">CodeMirror</a>, <a href="https://simplemde.com/">SimpleMDE</a> are editors for html, code, markdown text respectively, they works fine one their own, but when used with angularjs, some glue code is needed to hook them together. Here is a summary of what is needed:</p>
+<ul>
+<li><strong>directive binding</strong>, usually we need to create a new directive and place it on some html tags as attribute, or use it as an custom html element name, to tell angularjs that we want an editor instance, manual instantiation is possible, but not necessary if we could let angularjs do it for us.</li>
+<li><strong>value synchronization</strong>, this is also essential, in angularjs we usually use <code>ngModel</code>, as a two way data binding mechanism on <code>textarea</code> or <code>input</code>, but it will not automatically set or get value from the eidtor instances, so we need to add data binding to make data flow between <code>ngModel</code> and the editor instance.</li>
+<li><strong>instance management</strong>, create instance, assign id, working with multiple instances on same page etc</li>
+<li><strong>configuration</strong>, most of the editors need some kind of configuration, usually passed as an configuration object, when used with angularjs, this configuration object need to be passed, and watched for changes.</li>
+<li><strong>construction</strong> and <strong>destruction</strong>: remove event listeners, do some clean up</li>
+</ul>
+<p>Take <a href="https://simplemde.com/">SimpleMDE</a> as example, we walk through those steps one by one:</p>
+<h2>1. Module &amp; Directive</h2>
+<pre><code class="js">//create directive &quot;ui-simplemde&quot;
+angular.module('uiSimplemde', [])
+.directive('uiSimplemde', function($window, $timeout){
+  //...
+});
+</code></pre>
+
+<p>the code is simple and self-explanatory, we create its own module <code>uiSimplemde</code>, and define the new directive on the module, now you use this as an external dependency for your angularjs app, and you must include this module in your app module dependency list: <code>angular.module('myApp', ['uiSimplemde']);</code>. Now just add the directive as attribute to the target html element:</p>
+<pre><code class="html">&lt;!--create tinymce instance, bind it to the textarea, configuration is supposed to be an configuration object defined on current $scope--&gt;
+&lt;textrea ui-simplemde=&quot;configuration&quot;&gt;&lt;/textarea&gt;
+&lt;!-- or sometimes, with an inline configuration object--&gt;
+&lt;textrea ui-simplemde=&quot;{autofocus: true}&quot;&gt;&lt;/textarea&gt;
+</code></pre>
+
+<h2>2. Editor Construction</h2>
+<p>This step is simple enough, just create an editor instance and bind it to target DOM element(where the <code>ui-simplemde</code> directive is set), here we do this binding by passing the element to the <code>SimpleMDE()</code> constructor function as configuration value, other editors may has their own way to do this, like an explicit <code>bindTo(ele)</code> or <code>attachTo(ele)</code> api.</p>
+<pre><code class="js">function createEditorInstance(options, element){
+  //create and bind editor instance by pass element to constructor
+  options['element']= element;
+  var editor = new SimpleMDE(options);
+  //load default value inside target textarea element
+  var default_value = angular.element(element).val();
+  if(default_value.trim())
+    editor.value(default_value);
+  return editor;
+}
+</code></pre>
+
+<h2>3. Value Synchronization</h2>
+<p>We need to do <strong>bi-directional data binding</strong>, when editor value is changed or set/reset, say, by invoking editor commands or shortcuts etc, we want the <code>ngModel</code> to be updated accordingly, and vice versa, when <code>ngModel</code> is set by our app code, the editor instance should update or refresh itself. <code>ngModel</code> is extremely flexible and powerful, it also has two customizable <code>$formatters</code> <code>$parsers</code> <code>$validators</code> and <code>$asyncValidators</code> arrays, you can push your own formatters or parsers or validators into them, those formatters or parsers or validators will be called when <code>value</code> is synced between <code>ngModel.$viewValue</code> to <code>ngModel.$modelValue</code>, read the <a href="https://docs.angularjs.org/api/ng/type/ngModel.NgModelController">docs</a> if you want to know more about this.</p>
+<pre><code class="js">function syncWithNgModel(editor, ngModel, scope){
+  if(!ngModel)
+    return;
+  //model-&gt;editor
+  ngModel.$render = function(){
+    editor.value(ngModel.$viewValue);
+  };
+  //editor-&gt;model
+  editor.codemirror.on('changes', function(){
+    var newValue = editor.value();
+    if(newValue !== ngModel.$viewValue){
+      scope.$evalAsync(function(){
+        ngModel.$setViewValue(newValue);
+      })
+    }
+  });
+}
+</code></pre>
+
+<h2>4. Watch for Configuration changes</h2>
+<p>Sometimes, when we may change editor settings on-the-fly, in which case, we may want to watch the configuration object, and get notified when it's changed, and apply the changes accordingly, this can be done by add a listener with <code>$scope.watch()</code>.</p>
+<pre><code class="js">function watchConfigurations(scope, attrs, editor){
+  scope.$watch(attrs.uiSimplemde, function(newVal, oldVal){
+    if(newVal !== oldVal){
+      //update SimpleMDE configurations
+    }
+  });
+}
+</code></pre>
+
+<h2>5. Cleanup</h2>
+<p>Most of the angularjs stuff is hooked on the <code>$scope</code> object, so no manual cleanup is necessary. But the external editors usually has its own resources that need to be cleaned up(especially those event listener registered globally), fail to do so will keep those resources hanging around and thus cause <code>memory leaks</code>. In our editor's case, the leak is not so obvious unless you create tens of editors on the page. But we should always remember to check this and do it if necessary.</p>
+<pre><code class="js">//cleanup when $scope is destroyed
+scope.$on('$destroy', function(){
+  //destroy editor instance, restore to original textarea
+  scope.$mde.toTextArea();
+});
+</code></pre>
+
+<h2>The End</h2>
+<p>With all these tasks done, we call now hook them together, create our <code>ui-simplemde</code> directive. </p>
+<pre><code class="js">angular.module('ui.simplemde', [])
+.value('simpleMdeConfig', {
+})
+.directive('uiSimplemde', uiSimplemdeDirective);
+
+function uiSimplemdeDirective($timeout, $window, simpleMdeConfig){
+  return {
+    require: '?ngModel',
+    restrict: 'A',
+    priority: 599,
+    link: function(scope, element, attrs, ngModel){
+      if(angular.isUndefined($window.SimpleMDE)){
+        throw new Error(&quot;SimpleMDE is not defined! Is simplemde.js included?&quot;);
+      }
+      //create editor instance
+      var default_options = simpleMdeConfig || {};
+      var current_options = scope.$eval(attrs.uiSimplemde);
+      var options = angular.extend({}, default_options, current_options);
+      var editor = createEditorInstance(options, element[0]);
+      scope.$mde = editor;
+      //setup value synchronization
+      syncWithNgModel(editor, ngModel, scope);
+      //watch configuration changes
+      watchConfigurations(scope, attrs, editor);
+      //cleanup
+      scope.$on('$destroy', function(){
+        //destroy editor instance
+        scope.$mde.toTextArea();
+      });
+    }
+  };
+}
+</code></pre>
+
+<p>Besides what we mentioned above, there is one more thing, the <strong>configuration</strong>, in our directive, we allow you to pass configuration with something like <code>&lt;textarea ui-simplemde="configObj"&gt;&lt;/textarea&gt;</code> or <code>&lt;textarea ui-simplemde="{name: '', style: ''}"&gt;&lt;/textarea&gt;</code>, this enables you to configure each editor instance with different options, we also register an global <strong>simpleMdeConfig</strong> value object, it's has the lower priority, if you want to provide a application-wide configuration for all editor instances, you may override this value or decorate it:</p>
+<pre><code class="js">//override the value, by providing new global configuration
+angular.module('jsb-admin').value('simplemdeconfig', {
+  autodownloadfontawesome: false
+  //more options...
+});
+
+//or extend the existing global cnfiguration by decorating it
+angular.module('jsb-admin').decorator('simplemdeconfig', function($delegate){
+  var newcfg = angular.extend({}, $delegate, {
+    autodownloadfontawesome: false,
+    //more options...
+  });
+  return newcfg;
+});
+</code></pre>
+
+<p>Decorator for values is not documented in angularjs official document(which only show examples for services directive and filters), but it also works.</p>
+<h2>What next?</h2>
+<p>This is just a simple walk through of the angularjs editor integration process, we cover the essentials steps here, but there are many other missing features like <strong>debounce</strong>, <strong>validation check</strong>, support for <code>disabled</code> attributes etc. There are many examples of angularjs integrations with external editors out there, especially those from <a href="http://angular-ui.github.io/">angular-ui.github.io</a>, <a href="https://github.com/angular-ui/ui-tinymce">ng-tinymce</a>, <a href="https://github.com/angular-ui/ui-codemirror">ng-codemirror</a>, <a href="https://github.com/angular-ui/ui-ace">ng-ace</a> etc, they are good references and examples.</p>
+    <br>
+    <strong>Tags: </strong>
+      <a href="/tags#Angularjs" class="entry_tag"> Angularjs </a>
+      <a href="/tags#Javascript" class="entry_tag"> Javascript </a>
+  </div>
+    </div>
+    <footer>
+        <form style="padding:3px;text-align:center;margin:10px auto;" action="https://tinyletter.com/nmhnmh" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/nmhnmh', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail">Subscribe to my personal newsletter</lable></p></p><label for="tlemail">订阅我的个人邮件列表</label></p><p><input type="email" style="border:1px solid #eee; min-width:140px; padding: 5px 10px;" name="email" id="tlemail" placeholder="your email here"/></p><input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe/订阅" /><p><a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a></p></form>
+
+        <div>
+          <a href="https://twitter.com/niminghao" title="Visit My Twitter"><img style="width: 31px; height: 31px;" src="/assets/images/twitter.png" alt="Twitter"></a>
+          <a href="#niminghao804.gmail" title="Send me an email: niminghao804.gmail"><img style="width: 31px; height: 31px;" src="/assets/images/gmail.png" alt="Gmail"></a>
+          <a href="https://github.com/nmhnmh" title="See me on Github"><img style="width: 31px; height: 31px;" src="/assets/images/github.png" alt="Github"></a>
+          <a href="https://www.linkedin.com/in/nmhnmh/" title="Connect with me on Linkedin"><img style="height: 31px;" src="/assets/images/linkedin.png" alt="Linkedin"></a>
+          <a href="/rss.xml" title="Subscribe to RSS Feed"><img style="width: 31px; height: 31px;" src="/assets/images/rss.jpg" alt="RSS"></a>
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International"><img style="height: 31px;" src="/assets/images/cc-by-nc-sa.png" alt="CC BY-NC-SA 4.0"></a>
+        </div>
+        <div style="font-size: 0.6rem">
+          If not explicitly specified, contents on this website are licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+          <br>
+          未单独声明的情况下，本站内容默认采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+        </div>
+    </footer>
+    <script src='https://cdn.jsdelivr.net/highlight.js/9.11.0/highlight.min.js'></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src='https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/lunr/1.0.0/lunr.min.js'></script>
+    <script>
+    function initSearch(){
+      var index = window.site_index = lunr(function () {
+        this.field('title', {boost: 10})
+        this.field('tags')
+        this.ref('link');
+      })
+      var store = window.site_index_store = {};
+      $.getJSON('/index.json', function(data){
+        var len = data.length;
+        for(var i=0;i<len;i++){
+          index.add(data[i]);
+          store[data[i].link] = data[i];
+        }
+      })
+    }
+    function display_result(data){
+      var panel = $('#q_results');
+      var len = data.length;
+      if(len>0){
+        panel.show();
+        var html = "<ul>";
+        for(var i=0;i<len && i<20;i++){
+          var item = window.site_index_store[data[i].ref];
+          html += "<li><a href='"+item.link+"'>"+item.title+"</a></li>"
+        }
+        html += "</ul>";
+        panel.html(html)
+      } else {
+        panel.hide();
+      }
+    }
+    var search_timer = null;
+    $('#q').on('focus', function(e){
+      if(!window.site_index)
+        initSearch();
+    });
+    $('#q').on('keyup', function(e){
+      var v = $('#q').val().trim();
+      // debounce
+      clearTimeout(search_timer);
+      // clear result when no query provided
+      if(!v){
+        display_result([]);
+        return;
+      }
+      search_timer = setTimeout(function(query){
+        display_result(window.site_index.search(v));
+      }, 300, v);
+    });
+    </script>
+    <script>
+    document.getElementById('nav_trigger').addEventListener('click', function(e){
+      var menu = document.getElementById('nav_menu');
+      var styles = window.getComputedStyle(menu, null);
+      if(styles.getPropertyValue('display')==='none'){
+        menu.style.display = 'block';
+      } else {
+        menu.style.display = 'none';
+      }
+    });
+    </script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-89643442-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  </body>
+</html>

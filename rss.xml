@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>明浩的个人网站</title>
+    <description>A Personal Website</description>
+    <link>http://niminghao.com</link>
+    <atom:link href="http://niminghao.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 05 May 2020 11:25:27 +0000</pubDate>
+    <lastBuildDate>Tue, 05 May 2020 11:25:27 +0000</lastBuildDate>
+    <generator>SiteKicker </generator>
+      <item>
+        <title>回到Github</title>
+        <description></description>
+        <pubDate>Sun, 08 Sep 2019 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/post/back-to-github</link>
+        <guid isPermaLink="true">http://niminghao.com/post/back-to-github</guid>
+        <category>Github</category>
+      </item>
+      <item>
+        <title>VIM速查手册</title>
+        <description></description>
+        <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/vim-quick-ref</link>
+        <guid isPermaLink="true">http://niminghao.com/vim-quick-ref</guid>
+        <category>drafts</category>
+      </item>
+      <item>
+        <title>Python的虚拟运行环境</title>
+        <description></description>
+        <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/post/several-ways-of-doing-python-virtual-environments</link>
+        <guid isPermaLink="true">http://niminghao.com/post/several-ways-of-doing-python-virtual-environments</guid>
+        <category>Python</category>
+      </item>
+      <item>
+        <title>迷人的材料</title>
+        <description></description>
+        <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/book/迷人的材料</link>
+        <guid isPermaLink="true">http://niminghao.com/book/迷人的材料</guid>
+        <category>Book</category>
+        <category>材料</category>
+      </item>
+      <item>
+        <title>与树莓派相关的一些有用网站</title>
+        <description></description>
+        <pubDate>Fri, 02 Mar 2018 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/post/some-useful-raspberry-pi-resouces</link>
+        <guid isPermaLink="true">http://niminghao.com/post/some-useful-raspberry-pi-resouces</guid>
+        <category>RaspberryPi</category>
+      </item>
+      <item>
+        <title>树莓派连接蓝牙音箱或者耳机</title>
+        <description></description>
+        <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/post/raspberry-pi-with-bluetooth-speaker</link>
+        <guid isPermaLink="true">http://niminghao.com/post/raspberry-pi-with-bluetooth-speaker</guid>
+        <category>RaspberryPi</category>
+      </item>
+      <item>
+        <title>哪有没时间这回事</title>
+        <description></description>
+        <pubDate>Sat, 23 Sep 2017 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/book/哪有没时间这回事</link>
+        <guid isPermaLink="true">http://niminghao.com/book/哪有没时间这回事</guid>
+        <category>Book</category>
+        <category>生活</category>
+      </item>
+      <item>
+        <title>断舍离</title>
+        <description></description>
+        <pubDate>Mon, 04 Sep 2017 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/book/断舍离</link>
+        <guid isPermaLink="true">http://niminghao.com/book/断舍离</guid>
+        <category>Book</category>
+        <category>生活</category>
+      </item>
+      <item>
+        <title>Zero to One</title>
+        <description></description>
+        <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/book/zero-to-one</link>
+        <guid isPermaLink="true">http://niminghao.com/book/zero-to-one</guid>
+        <category>Book</category>
+        <category>Entrepreneurship</category>
+        <category>Business</category>
+      </item>
+      <item>
+        <title>Learning Python</title>
+        <description></description>
+        <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/book/learning-python</link>
+        <guid isPermaLink="true">http://niminghao.com/book/learning-python</guid>
+        <category>Book</category>
+        <category>python</category>
+      </item>
+      <item>
+        <title>Practical Vim</title>
+        <description></description>
+        <pubDate>Sat, 08 Jul 2017 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/book/practical-vim</link>
+        <guid isPermaLink="true">http://niminghao.com/book/practical-vim</guid>
+        <category>Book</category>
+        <category>Vim</category>
+      </item>
+      <item>
+        <title>深入浅出Nodejs</title>
+        <description></description>
+        <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/book/深入浅出Nodejs</link>
+        <guid isPermaLink="true">http://niminghao.com/book/深入浅出Nodejs</guid>
+        <category>Book</category>
+        <category>Nodejs</category>
+      </item>
+      <item>
+        <title>Javascript Console API</title>
+        <description></description>
+        <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://niminghao.com/post/js-console-api</link>
+        <guid isPermaLink="true">http://niminghao.com/post/js-console-api</guid>
+        <category>Javascript</category>
+      </item>
+  </channel>
+</rss>
