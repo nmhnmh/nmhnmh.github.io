@@ -1,4 +1,4 @@
-name: niminghao.com
+name: 明浩的个人网站
 base_url: http://niminghao.com
 output_dir: '.build'
 ignore_dirs:

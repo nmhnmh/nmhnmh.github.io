@@ -1,15 +1,15 @@
 ---
 id: about
 date: 2016-12-27
-title: About Me
+title: 关于我
 layout: default
 ---
 
 你好 • Hello • Hola • ハロー • Ciao • Bonjour • Hallo • Olá • привет • שלום • مرحبا
 --------------------------------------------------------------------------------
-This is my **personal website**, I write something about various topics and post them here.
+This is minghao's **personal website**, I write about different topics and post them here from time to time.
 
-这是我的个人网站，有时候会随点东西放上来。
+这是明浩的个人网站，时不时的会写点东西放上来。
 
 我使用的一些工具 / Tools I Use
 --------------------------------------------------------------------------------
